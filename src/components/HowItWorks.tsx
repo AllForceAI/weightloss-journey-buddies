@@ -94,7 +94,6 @@ const HowItWorks = () => {
               key={index} 
               className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl"
               style={{ 
-                animationDelay: `${(index + 1) * 0.1}s`,
                 opacity: 0,
                 animation: 'fade-in-up 0.6s ease-out forwards',
                 animationDelay: `${0.2 + index * 0.1}s`
