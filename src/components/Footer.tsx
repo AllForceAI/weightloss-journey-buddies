@@ -35,9 +35,9 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold text-lg mb-6">Company</h5>
             <ul className="space-y-4">
-              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/providers" className="text-gray-400 hover:text-white transition-colors">Our Providers</Link></li>
-              <li><Link to="/careers" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Our Providers</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -45,10 +45,10 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold text-lg mb-6">Resources</h5>
             <ul className="space-y-4">
-              <li><Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/resources" className="text-gray-400 hover:text-white transition-colors">Weight Loss Guide</Link></li>
-              <li><Link to="/faq" className="text-gray-400 hover:text-white transition-colors">FAQs</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Support</a></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Weight Loss Guide</Link></li>
+              <li><Link to="/#faq" className="text-gray-400 hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Support</Link></li>
             </ul>
           </div>
           
