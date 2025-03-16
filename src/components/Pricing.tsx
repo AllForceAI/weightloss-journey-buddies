@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';

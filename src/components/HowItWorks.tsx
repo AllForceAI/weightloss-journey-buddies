@@ -1,5 +1,5 @@
-
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const HowItWorks = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -125,12 +125,11 @@ const HowItWorks = () => {
           <p className="mb-6 text-brand-blue-100">
             Our medical team is ready to help you achieve lasting weight loss with the latest science-backed medications.
           </p>
-          <a 
-            href="/quiz" 
+          <Link to="/quiz" 
             className="inline-block bg-white text-brand-blue-600 font-semibold px-8 py-3 rounded-lg transition-all hover:bg-brand-blue-50 shadow-lg hover:shadow-xl"
           >
             Start Your Assessment
-          </a>
+          </Link>
         </div>
       </div>
     </section>

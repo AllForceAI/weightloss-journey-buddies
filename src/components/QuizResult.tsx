@@ -118,7 +118,7 @@ const QuizResult = ({ answers }: QuizResultProps) => {
           </div>
         </div>
         
-        <Link to="/booking">
+        <Link to="/">
           <Button className="w-full bg-white hover:bg-gray-100 text-brand-blue-600 transition-all">
             Schedule Your Consultation
             <ArrowRight className="ml-2 h-5 w-5" />
