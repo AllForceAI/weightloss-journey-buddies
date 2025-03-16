@@ -30,10 +30,42 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
+        <div className="py-12 bg-gradient-to-b from-white to-brand-blue-50">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 font-display text-brand-blue-800">
+              Why Choose Our Medical Weight Loss Program?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+              {[
+                {
+                  title: "Doctor Supervised",
+                  description: "All treatment plans are developed and monitored by licensed physicians"
+                },
+                {
+                  title: "FDA-Approved",
+                  description: "Access to the same medications used in clinical trials with proven results"
+                },
+                {
+                  title: "Personalized Care",
+                  description: "Your treatment plan is tailored to your specific health needs and goals"
+                },
+                {
+                  title: "Ongoing Support",
+                  description: "Regular check-ins and adjustments to maximize your success"
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-bold mb-3 text-brand-blue-600">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         <HowItWorks />
         <SocialProof />
         <Pricing />
