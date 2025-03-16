@@ -22,10 +22,46 @@ const QuizResult = ({ answers }: QuizResultProps) => {
   // Calculate BMI if height and weight are provided
   let bmi = null;
   if (answers.height && answers.weight) {
-    // This is a very simplified calculation and would need proper implementation
-    // based on how you're collecting height/weight data
-    const heightInMeters = parseInt(answers.height) / 100;
-    const weightInKg = parseInt(answers.weight);
+    // Convert height range to average height in cm
+    let heightInCm: number;
+    switch (answers.height) {
+      case "5'0\" - 5'3\"":
+        heightInCm = 160; // Average of 5'1" in cm
+        break;
+      case "5'4\" - 5'7\"":
+        heightInCm = 170; // Average of 5'5.5" in cm
+        break;
+      case "5'8\" - 5'11\"":
+        heightInCm = 180; // Average of 5'9.5" in cm
+        break;
+      case "6'0\" or taller":
+        heightInCm = 190; // Average of 6'2" in cm
+        break;
+      default:
+        heightInCm = 170; // Default fallback
+    }
+    
+    // Convert weight range to average weight in kg
+    let weightInKg: number;
+    switch (answers.weight) {
+      case "100-150 lbs":
+        weightInKg = 56.7; // Average of 125 lbs in kg
+        break;
+      case "151-200 lbs":
+        weightInKg = 79.4; // Average of 175 lbs in kg
+        break;
+      case "201-250 lbs":
+        weightInKg = 102.1; // Average of 225 lbs in kg
+        break;
+      case "251+ lbs":
+        weightInKg = 124.7; // Average of 275 lbs in kg
+        break;
+      default:
+        weightInKg = 79.4; // Default fallback
+    }
+    
+    // Calculate BMI: weight (kg) / (height (m))²
+    const heightInMeters = heightInCm / 100;
     bmi = (weightInKg / (heightInMeters * heightInMeters)).toFixed(1);
   }
   
