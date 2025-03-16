@@ -8,29 +8,7 @@ const Pricing = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  // Handle smooth scrolling for hash links
-  useEffect(() => {
-    // Check if URL has a hash that matches this section
+    // Handle smooth scrolling for hash links
     if (window.location.hash === '#pricing') {
       sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
@@ -38,9 +16,8 @@ const Pricing = () => {
 
   return (
     <section id="pricing" ref={sectionRef} className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-brand-blue-50 z-0"></div>
-      <div className="section-container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 staggered-appear">
+      <div className="container mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-blue-100 text-brand-blue-800 mb-4">
             Transparent Pricing
           </h2>
@@ -52,14 +29,7 @@ const Pricing = () => {
           </p>
         </div>
         
-        <div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-          style={{ 
-            opacity: 0,
-            animation: 'fade-in-up 0.6s ease-out forwards',
-            animationDelay: '0.2s'
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl border border-brand-blue-100">
             <div className="p-8">
               <div className="flex items-center justify-between mb-6">
@@ -146,14 +116,7 @@ const Pricing = () => {
           </div>
         </div>
         
-        <div 
-          className="mt-16 bg-white p-8 rounded-2xl shadow-md max-w-4xl mx-auto border border-brand-blue-100"
-          style={{ 
-            opacity: 0,
-            animation: 'fade-in-up 0.6s ease-out forwards',
-            animationDelay: '0.4s'
-          }}
-        >
+        <div className="mt-16 bg-white p-8 rounded-2xl shadow-md max-w-4xl mx-auto border border-brand-blue-100">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h4 className="text-xl font-bold mb-2">Insurance & Pricing Comparison</h4>

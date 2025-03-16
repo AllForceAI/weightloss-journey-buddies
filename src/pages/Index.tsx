@@ -66,18 +66,10 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div id="how-it-works">
-          <HowItWorks />
-        </div>
-        <div id="testimonials">
-          <SocialProof />
-        </div>
-        <div id="pricing">
-          <Pricing />
-        </div>
-        <div id="faq">
-          <FAQ />
-        </div>
+        <HowItWorks />
+        <SocialProof />
+        <Pricing />
+        <FAQ />
       </main>
       <Footer />
     </div>

@@ -80,8 +80,8 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" ref={sectionRef} className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-white to-brand-blue-50 z-0"></div>
-      <div className="section-container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 staggered-appear">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-blue-100 text-brand-blue-800 mb-4">
             Simple Process
           </h2>
@@ -99,11 +99,6 @@ const HowItWorks = () => {
             <div 
               key={index} 
               className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl"
-              style={{ 
-                opacity: 0,
-                animation: 'fade-in-up 0.6s ease-out forwards',
-                animationDelay: `${0.2 + index * 0.1}s`
-              }}
             >
               <div className="p-8">
                 <div className="bg-brand-blue-50 rounded-full w-16 h-16 flex items-center justify-center mb-6">
@@ -120,12 +115,7 @@ const HowItWorks = () => {
         </div>
         
         <div 
-          className="mt-16 p-8 bg-brand-blue-600 rounded-2xl text-white text-center max-w-4xl mx-auto glass-card"
-          style={{ 
-            opacity: 0,
-            animation: 'fade-in-up 0.6s ease-out forwards',
-            animationDelay: '0.6s'
-          }}
+          className="mt-16 p-8 bg-brand-blue-600 rounded-2xl text-white text-center max-w-4xl mx-auto"
         >
           <h4 className="text-2xl font-bold mb-4">Ready to Begin Your Transformation?</h4>
           <p className="mb-6 text-brand-blue-100">

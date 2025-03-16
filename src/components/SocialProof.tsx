@@ -4,27 +4,6 @@ import { useEffect, useRef } from 'react';
 const SocialProof = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-  
   const testimonials = [
     {
       name: "Sarah M.",
@@ -53,11 +32,11 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="py-24 relative">
-      <div className="section-container relative z-10">
+    <section id="testimonials" className="py-24 relative bg-brand-blue-50">
+      <div className="container mx-auto px-6">
         <div 
           ref={sectionRef} 
-          className="text-center max-w-3xl mx-auto mb-16 staggered-appear"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-green-100 text-brand-green-800 mb-4">
             Real Results
@@ -76,11 +55,6 @@ const SocialProof = () => {
             <div 
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
-              style={{ 
-                opacity: 0,
-                animation: 'fade-in-up 0.6s ease-out forwards',
-                animationDelay: `${0.2 + index * 0.1}s`
-              }}
             >
               <div className="h-60 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
@@ -118,12 +92,7 @@ const SocialProof = () => {
         </div>
         
         <div 
-          className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 bg-brand-blue-50 p-8 rounded-2xl"
-          style={{ 
-            opacity: 0,
-            animation: 'fade-in-up 0.6s ease-out forwards',
-            animationDelay: '0.5s'
-          }}
+          className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 bg-white p-8 rounded-2xl shadow-md"
         >
           <div className="text-center md:text-left">
             <h4 className="text-2xl font-bold mb-2">Results You Can Expect</h4>
@@ -133,11 +102,11 @@ const SocialProof = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+            <div className="bg-brand-blue-50 p-6 rounded-xl shadow-md text-center">
               <span className="text-3xl font-bold text-brand-blue-600 block">15%</span>
               <span className="text-gray-700 text-sm">Average Weight Loss</span>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md text-center">
+            <div className="bg-brand-blue-50 p-6 rounded-xl shadow-md text-center">
               <span className="text-3xl font-bold text-brand-blue-600 block">94%</span>
               <span className="text-gray-700 text-sm">Patient Satisfaction</span>
             </div>
