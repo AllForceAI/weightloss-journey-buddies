@@ -30,11 +30,11 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <HeroSection />
-        <div className="py-12 bg-gradient-to-b from-white to-brand-blue-50">
+        <div id="features" className="py-12 bg-gradient-to-b from-white to-brand-blue-50">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 font-display text-brand-blue-800">
               Why Choose Our Medical Weight Loss Program?
@@ -66,10 +66,18 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <HowItWorks />
-        <SocialProof />
-        <Pricing />
-        <FAQ />
+        <div id="how-it-works">
+          <HowItWorks />
+        </div>
+        <div id="testimonials">
+          <SocialProof />
+        </div>
+        <div id="pricing">
+          <Pricing />
+        </div>
+        <div id="faq">
+          <FAQ />
+        </div>
       </main>
       <Footer />
     </div>

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -86,11 +86,20 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            <Link to="/quiz">
-              <Button className="bg-brand-blue-500 hover:bg-brand-blue-600 transition-all shadow-md hover:shadow-lg">
-                Start Your Journey
-              </Button>
-            </Link>
+            <div className="flex items-center space-x-4">
+              <a 
+                href="tel:+18005551234" 
+                className="flex items-center text-brand-blue-600 font-medium"
+              >
+                <Phone size={16} className="mr-2" />
+                (800) 555-1234
+              </a>
+              <Link to="/quiz">
+                <Button className="bg-brand-blue-500 hover:bg-brand-blue-600 transition-all shadow-md hover:shadow-lg">
+                  Start Your Journey
+                </Button>
+              </Link>
+            </div>
           </nav>
           
           <div className="md:hidden">
@@ -140,6 +149,13 @@ const Navbar = () => {
             >
               Contact
             </Link>
+            <a 
+              href="tel:+18005551234" 
+              className="flex items-center py-3 text-brand-blue-600 font-medium border-b border-gray-100"
+            >
+              <Phone size={16} className="mr-2" />
+              (800) 555-1234
+            </a>
             <Link to="/quiz" className="block">
               <Button className="w-full bg-brand-blue-500 hover:bg-brand-blue-600 transition-all">
                 Start Your Journey
