@@ -1,11 +1,12 @@
 
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,6 +28,14 @@ const HeroSection = () => {
       }
     };
   }, []);
+
+  const scrollToSection = (id: string) => {
+    // If we're already on the homepage, scroll to the section
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="relative min-h-screen flex items-center pt-24 overflow-hidden">
@@ -61,7 +70,15 @@ const HeroSection = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/#how-it-works">
+              <Link 
+                to="/#how-it-works" 
+                onClick={(e) => {
+                  if (location.pathname === '/') {
+                    e.preventDefault();
+                    scrollToSection('how-it-works');
+                  }
+                }}
+              >
                 <Button variant="outline" size="lg" className="text-base px-8 py-6 border-2 border-brand-blue-200 text-brand-blue-700 hover:bg-brand-blue-50 transition-all">
                   Learn How It Works
                 </Button>

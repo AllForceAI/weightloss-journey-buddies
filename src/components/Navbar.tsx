@@ -1,12 +1,13 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,26 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
+
+  const scrollToSection = (id: string) => {
+    setIsMobileMenuOpen(false);
+    
+    // If we're not on the homepage, navigate to the homepage with the hash
+    if (location.pathname !== '/') {
+      return; // The Link component will handle the navigation
+    }
+    
+    // If we're already on the homepage, scroll to the section
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header 
@@ -38,13 +59,25 @@ const Navbar = () => {
             <Link to="/" className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium">
               Home
             </Link>
-            <Link to="/#how-it-works" className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium">
+            <Link 
+              to="/#how-it-works" 
+              className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
+              onClick={() => scrollToSection('how-it-works')}
+            >
               How It Works
             </Link>
-            <Link to="/#pricing" className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium">
+            <Link 
+              to="/#pricing" 
+              className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
+              onClick={() => scrollToSection('pricing')}
+            >
               Pricing
             </Link>
-            <Link to="/#faq" className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium">
+            <Link 
+              to="/#faq" 
+              className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
+              onClick={() => scrollToSection('faq')}
+            >
               FAQ
             </Link>
             <Link to="/quiz">
@@ -71,36 +104,31 @@ const Navbar = () => {
             <Link 
               to="/" 
               className="block py-3 text-gray-700 font-medium border-b border-gray-100"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
               to="/#how-it-works" 
               className="block py-3 text-gray-700 font-medium border-b border-gray-100"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => scrollToSection('how-it-works')}
             >
               How It Works
             </Link>
             <Link 
               to="/#pricing" 
               className="block py-3 text-gray-700 font-medium border-b border-gray-100"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => scrollToSection('pricing')}
             >
               Pricing
             </Link>
             <Link 
               to="/#faq" 
               className="block py-3 text-gray-700 font-medium border-b border-gray-100"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => scrollToSection('faq')}
             >
               FAQ
             </Link>
-            <Link 
-              to="/quiz" 
-              className="block"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link to="/quiz" className="block">
               <Button className="w-full bg-brand-blue-500 hover:bg-brand-blue-600 transition-all">
                 Start Your Journey
               </Button>

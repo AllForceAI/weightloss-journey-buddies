@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -27,14 +28,19 @@ const Pricing = () => {
     };
   }, []);
 
+  // Handle smooth scrolling for hash links
+  useEffect(() => {
+    // Check if URL has a hash that matches this section
+    if (window.location.hash === '#pricing') {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   return (
-    <section id="pricing" className="py-24 relative">
+    <section id="pricing" ref={sectionRef} className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-white to-brand-blue-50 z-0"></div>
       <div className="section-container relative z-10">
-        <div 
-          ref={sectionRef} 
-          className="text-center max-w-3xl mx-auto mb-16 staggered-appear"
-        >
+        <div className="text-center max-w-3xl mx-auto mb-16 staggered-appear">
           <h2 className="inline-block text-sm font-semibold px-3 py-1 rounded-full bg-brand-blue-100 text-brand-blue-800 mb-4">
             Transparent Pricing
           </h2>
