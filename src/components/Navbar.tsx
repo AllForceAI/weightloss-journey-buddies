@@ -67,13 +67,6 @@ const Navbar = () => {
               How It Works
             </Link>
             <Link 
-              to="/#pricing" 
-              className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
-              onClick={() => scrollToSection('pricing')}
-            >
-              Pricing
-            </Link>
-            <Link 
               to="/#faq" 
               className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
               onClick={() => scrollToSection('faq')}
@@ -128,13 +121,6 @@ const Navbar = () => {
               onClick={() => scrollToSection('how-it-works')}
             >
               How It Works
-            </Link>
-            <Link 
-              to="/#pricing" 
-              className="block py-3 text-gray-700 font-medium border-b border-gray-100"
-              onClick={() => scrollToSection('pricing')}
-            >
-              Pricing
             </Link>
             <Link 
               to="/#faq" 
