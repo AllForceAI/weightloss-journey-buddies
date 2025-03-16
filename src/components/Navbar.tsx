@@ -80,6 +80,12 @@ const Navbar = () => {
             >
               FAQ
             </Link>
+            <Link 
+              to="/contact" 
+              className="text-gray-700 hover:text-brand-blue-500 transition-colors font-medium"
+            >
+              Contact
+            </Link>
             <Link to="/quiz">
               <Button className="bg-brand-blue-500 hover:bg-brand-blue-600 transition-all shadow-md hover:shadow-lg">
                 Start Your Journey
@@ -127,6 +133,12 @@ const Navbar = () => {
               onClick={() => scrollToSection('faq')}
             >
               FAQ
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block py-3 text-gray-700 font-medium border-b border-gray-100"
+            >
+              Contact
             </Link>
             <Link to="/quiz" className="block">
               <Button className="w-full bg-brand-blue-500 hover:bg-brand-blue-600 transition-all">
