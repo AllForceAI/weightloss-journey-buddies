@@ -61,6 +61,12 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
+            <Link to="/blog">
+              <Button variant="outline" className="text-lg py-6 px-8">
+                Visit Our Blog
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
 
