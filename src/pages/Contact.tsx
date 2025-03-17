@@ -1,12 +1,12 @@
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,16 +14,20 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -35,13 +39,11 @@ const Contact = () => {
       });
       toast({
         title: "Message Sent",
-        description: "We've received your message and will get back to you soon.",
+        description: "We've received your message and will get back to you soon."
       });
     }, 1000);
   };
-
-  return (
-    <div className="flex flex-col min-h-screen">
+  return <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,29 +61,13 @@ const Contact = () => {
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Your Name
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500"
-                  />
+                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500"
-                  />
+                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500" />
                 </div>
               </div>
               
@@ -89,38 +75,18 @@ const Contact = () => {
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
                   Subject
                 </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500"
-                />
+                <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500" />
               </div>
               
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500"
-                ></textarea>
+                <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-brand-blue-500 focus:border-brand-blue-500"></textarea>
               </div>
               
               <div className="text-center">
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full md:w-auto bg-brand-blue-500 hover:bg-brand-blue-600"
-                >
+                <Button type="submit" disabled={isSubmitting} className="w-full md:w-auto bg-brand-blue-500 hover:bg-brand-blue-600">
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </div>
@@ -135,7 +101,7 @@ const Contact = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-2">Email Us</h3>
-              <p className="text-gray-600">support@weightsage.com</p>
+              <p className="text-gray-600">info@glpone.com</p>
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-6 text-center">
@@ -161,8 +127,6 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
