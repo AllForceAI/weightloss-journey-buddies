@@ -13,13 +13,13 @@ const HeroSection = () => {
   }, {
     action: "Improve",
     focus: "health",
-    image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2070&auto=format&fit=crop",
-    alt: "Health improvement"
+    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=2070&auto=format&fit=crop",
+    alt: "Woman measuring waist for health improvement"
   }, {
     action: "Boost",
     focus: "energy",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
-    alt: "Energy boost"
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
+    alt: "Person jogging with increased energy levels"
   }];
   
   return <div className="relative py-12 md:py-24 overflow-hidden bg-white">
