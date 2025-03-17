@@ -1,6 +1,9 @@
+
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
+
 const HeroSection = () => {
   const treatments = [{
     action: "Lose",
@@ -18,6 +21,7 @@ const HeroSection = () => {
     image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop",
     alt: "Energy boost"
   }];
+  
   return <div className="relative py-12 md:py-24 overflow-hidden bg-white">
       {/* Top benefits bar */}
       <div className="hidden lg:flex items-center justify-between max-w-7xl mx-auto px-6 py-3 text-sm text-gray-600 border-b">
@@ -69,7 +73,8 @@ const HeroSection = () => {
 
         {/* Treatment options grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {treatments.map((treatment, index) => <Link to="/quiz" key={index} className="group bg-brand-blue-50 rounded-xl p-8 flex flex-col justify-between h-64 transition-all hover:shadow-md relative overflow-hidden">
+          {treatments.map((treatment, index) => (
+            <Link to="/quiz" key={index} className="group bg-brand-blue-50 rounded-xl p-8 flex flex-col justify-between h-64 transition-all hover:shadow-md relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-2xl font-medium mb-1">
                   <span>{treatment.action}</span>{' '}
@@ -85,11 +90,17 @@ const HeroSection = () => {
               </div>
               
               <div className="absolute bottom-0 right-0 w-32 h-32 opacity-70 transition-transform group-hover:scale-110">
-                
+                <img 
+                  src={treatment.image} 
+                  alt={treatment.alt} 
+                  className="w-full h-full object-contain"
+                />
               </div>
-            </Link>)}
+            </Link>
+          ))}
         </div>
       </div>
     </div>;
 };
+
 export default HeroSection;
