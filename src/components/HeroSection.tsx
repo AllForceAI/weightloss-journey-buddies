@@ -1,4 +1,3 @@
-
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -8,18 +7,18 @@ const HeroSection = () => {
   const treatments = [{
     action: "Lose",
     focus: "weight",
-    image: "/lovable-uploads/4356675f-6fb1-49ab-903a-a0bc94d396f9.png",
-    alt: "Weight loss medication"
+    image: "https://images.unsplash.com/photo-1511909525232-61113c912358?q=80&w=2070&auto=format&fit=crop",
+    alt: "Weight loss medication represented by measuring tape"
   }, {
     action: "Improve",
     focus: "health",
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=2070&auto=format&fit=crop",
-    alt: "Woman measuring waist for health improvement"
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
+    alt: "Woman checking blood pressure for health improvement"
   }, {
     action: "Boost",
     focus: "energy",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop",
-    alt: "Person jogging with increased energy levels"
+    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2070&auto=format&fit=crop",
+    alt: "Person with raised arms showing energy and vitality"
   }];
   
   return <div className="relative py-12 md:py-24 overflow-hidden bg-white">
