@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <span className="font-display font-bold text-2xl text-white">WeightSage</span>
+              <span className="font-display font-bold text-2xl text-white">GLPONE.com</span>
             </Link>
             <p className="text-gray-400 mb-6">
               Modern weight loss medicine accessible to everyone, with doctor supervision and ongoing support.
@@ -65,9 +65,9 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-gray-800 text-gray-400 text-sm">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>© {new Date().getFullYear()} WeightSage. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} GLPONE.com. All rights reserved.</p>
             <p className="mt-4 md:mt-0">
-              WeightSage does not provide medical advice, diagnosis, or treatment.
+              GLPONE.com does not provide medical advice, diagnosis, or treatment.
             </p>
           </div>
         </div>

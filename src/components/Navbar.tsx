@@ -51,7 +51,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="font-display font-bold text-2xl text-brand-blue-600">WeightSage</span>
+              <span className="font-display font-bold text-2xl text-brand-blue-600">GLPONE.com</span>
             </Link>
           </div>
           

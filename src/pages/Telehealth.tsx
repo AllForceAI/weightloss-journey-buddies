@@ -15,7 +15,7 @@ const Telehealth = () => {
           <div className="space-y-6 text-gray-700">
             <section>
               <h2 className="text-xl font-semibold mb-3">Introduction</h2>
-              <p>This Telehealth Consent Form outlines the rights and responsibilities of patients utilizing WeightSage's telehealth services. Telehealth involves the use of electronic communications to enable healthcare providers to deliver clinical health care at a distance.</p>
+              <p>This Telehealth Consent Form outlines the rights and responsibilities of patients utilizing GLPONE.com's telehealth services. Telehealth involves the use of electronic communications to enable healthcare providers to deliver clinical health care at a distance.</p>
             </section>
             
             <section>
@@ -72,7 +72,7 @@ const Telehealth = () => {
             </section>
             
             <section className="pt-4">
-              <p className="italic">By utilizing WeightSage's telehealth services, you acknowledge that you have read and understand the information provided above regarding telehealth, and all your questions have been answered to your satisfaction.</p>
+              <p className="italic">By utilizing GLPONE.com's telehealth services, you acknowledge that you have read and understand the information provided above regarding telehealth, and all your questions have been answered to your satisfaction.</p>
             </section>
           </div>
         </div>
