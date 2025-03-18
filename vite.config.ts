@@ -4,17 +4,15 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
+    host: "0.0.0.0",
     port: 8080,
   },
-  base: "./", // This ensures assets are loaded correctly on GitHub Pages
+  base: "/weightloss-journey-buddies/", // Ensures assets load correctly on GitHub Pages
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === "development" ? componentTagger() : null,
   ].filter(Boolean),
   resolve: {
     alias: {
