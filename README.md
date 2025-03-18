@@ -1,3 +1,4 @@
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -35,6 +36,23 @@ npm i
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
+
+## Deploying to GitHub Pages
+
+To deploy this project to GitHub Pages:
+
+1. Push your code to a GitHub repository
+2. Make sure your repository is set to public
+3. Run the build command:
+   ```sh
+   npm run build
+   ```
+4. Create a new branch named `gh-pages` (if it doesn't exist)
+5. Copy the contents of the `dist` folder to the root of the `gh-pages` branch
+6. Push the `gh-pages` branch to GitHub
+7. Go to your repository settings > Pages
+8. Set the source to the `gh-pages` branch and click save
+9. Your site will be published at `https://<your-github-username>.github.io/<repository-name>/`
 
 **Edit a file directly in GitHub**
 
