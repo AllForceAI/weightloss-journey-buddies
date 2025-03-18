@@ -4,11 +4,28 @@ import { Button } from '@/components/ui/button';
 import { Calendar, Clock, Video, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-const BookingCalendar = () => {
+interface BookingCalendarProps {
+  calComEmbed?: string;
+}
+
+const BookingCalendar = ({ calComEmbed }: BookingCalendarProps) => {
   const { toast } = useToast();
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [consultationType, setConsultationType] = useState<'video' | 'chat'>('video');
+  
+  // If cal.com embed is provided, render it
+  if (calComEmbed) {
+    return (
+      <div className="bg-white rounded-xl shadow-lg p-6 md:p-8">
+        <h3 className="text-2xl font-bold mb-6 font-display">Schedule Your Consultation</h3>
+        <div 
+          className="cal-embed-container" 
+          dangerouslySetInnerHTML={{ __html: calComEmbed }} 
+        />
+      </div>
+    );
+  }
   
   // Generate next 7 days for the calendar
   const generateDates = () => {
