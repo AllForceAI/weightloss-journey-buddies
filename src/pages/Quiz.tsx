@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import QuizQuestion from '@/components/QuizQuestion';
@@ -10,6 +11,7 @@ const Quiz = () => {
     window.scrollTo(0, 0);
   }, []);
   
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [quizCompleted, setQuizCompleted] = useState(false);
@@ -97,6 +99,8 @@ const Quiz = () => {
       setCurrentStep(currentStep + 1);
     } else {
       setQuizCompleted(true);
+      // Add query param to URL to indicate quiz completion
+      navigate('/quiz?completed=true', { replace: true });
     }
   };
   

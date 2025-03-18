@@ -14,6 +14,7 @@ import Terms from "./pages/Terms";
 import Hipaa from "./pages/Hipaa";
 import Telehealth from "./pages/Telehealth";
 import AboutUs from "./pages/AboutUs";
+import Booking from "./pages/Booking";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/hipaa" element={<Hipaa />} />
           <Route path="/telehealth" element={<Telehealth />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/booking" element={<Booking />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
