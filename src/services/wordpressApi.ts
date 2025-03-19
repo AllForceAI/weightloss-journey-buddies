@@ -30,7 +30,7 @@ export interface WordPressPost {
 }
 
 // Base URL for the WordPress site - replace with your actual WordPress site URL
-const WP_API_URL = 'https://glpone.com/wp-json/wp/v2';
+const WP_API_URL = 'https://glpone.com/blog/wp-json/wp/v2';
 
 export const fetchPosts = async (page = 1, perPage = 10) => {
   const response = await fetch(
