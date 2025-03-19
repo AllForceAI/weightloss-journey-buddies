@@ -13,7 +13,7 @@ export interface WordPressPost {
   excerpt: {
     rendered: string;
   };
-  featured_media: number;
+  featured_media: number
   slug: string;
   _embedded?: {
     'wp:featuredmedia'?: Array<{
