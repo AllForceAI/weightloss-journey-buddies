@@ -80,13 +80,13 @@ const Navbar = () => {
               Contact
             </Link>
             <div className="flex items-center space-x-4">
-              <a 
-                href="tel:+18005551234" 
-                className="flex items-center text-brand-blue-600 font-medium"
-              >
-                <Phone size={16} className="mr-2" />
-                (800) 555-1234
-              </a>
+            <a 
+              href="tel:+19472084714" 
+              className="text-black font-medium hover:text-gray-700 flex items-center"
+            >
+              <Phone size={16} className="mr-2" />
+              +1 (947) 208-4714
+            </a>
               <Link to="/quiz">
                 <Button className="bg-brand-blue-500 hover:bg-brand-blue-600 transition-all shadow-md hover:shadow-lg">
                   Start Your Journey
@@ -136,11 +136,11 @@ const Navbar = () => {
               Contact
             </Link>
             <a 
-              href="tel:+18005551234" 
+              href="tel:+19472084714" 
               className="flex items-center py-3 text-brand-blue-600 font-medium border-b border-gray-100"
             >
               <Phone size={16} className="mr-2" />
-              (800) 555-1234
+              +1 (947) 208-4714
             </a>
             <Link to="/quiz" className="block">
               <Button className="w-full bg-brand-blue-500 hover:bg-brand-blue-600 transition-all">
