@@ -7,27 +7,27 @@ const HeroSection = () => {
   const treatments = [{
     action: "Lose",
     focus: "weight",
+    tagline: "Proven GLP-1 treatments for real results.",
     image: "https://images.unsplash.com/photo-1511909525232-61113c912358?q=80&w=2070&auto=format&fit=crop",
     alt: "Weight loss medication represented by measuring tape"
   }, {
-    action: "Improve",
-    focus: "health",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
-    alt: "Woman checking blood pressure for health improvement"
-  }, {
     action: "Boost",
     focus: "energy",
+    tagline: "Feel more active and focused with expert-backed care.",
     image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=2070&auto=format&fit=crop",
     alt: "Person with raised arms showing energy and vitality"
+  }, {
+    action: "Improve",
+    focus: "health",
+    tagline: "Personalized treatment for sustainable well-being.",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop",
+    alt: "Woman checking blood pressure for health improvement"
   }];
   
-  return <div className="relative py-12 md:py-24 overflow-hidden bg-white">
+  return (
+    <div className="relative py-12 md:py-24 overflow-hidden bg-white">
       {/* Top benefits bar */}
       <div className="hidden lg:flex items-center justify-between max-w-7xl mx-auto px-6 py-3 text-sm text-gray-600 border-b">
-        <div className="flex items-center">
-          <span>
-        </span>
-        </div>
         <div className="flex items-center">
           <span>100% online</span>
         </div>
@@ -36,10 +36,6 @@ const HeroSection = () => {
         </div>
         <div className="flex items-center">
           <span>US-Sourced medications</span>
-        </div>
-        <div className="flex items-center">
-          <span>
-        </span>
         </div>
       </div>
 
@@ -57,13 +53,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link to="/quiz">
               <Button className="text-lg py-6 px-8 bg-brand-blue-600 hover:bg-brand-blue-700">
-                Start GLP-1 Assessment
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/blog">
-              <Button variant="outline" className="text-lg py-6 px-8">
-                Visit Our Blog
+                Get Started
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -80,7 +70,7 @@ const HeroSection = () => {
                   <span className="text-brand-blue-600">{treatment.focus}</span>
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  GLP-1 medications that work
+                  {treatment.tagline}
                 </p>
                 <div className="flex items-center text-brand-blue-600 font-medium">
                   <span>Start now</span>
@@ -99,7 +89,8 @@ const HeroSection = () => {
           ))}
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default HeroSection;
