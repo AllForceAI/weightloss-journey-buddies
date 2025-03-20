@@ -42,12 +42,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
-            Medical Weight Loss <br className="hidden md:block" />
-            <span className="text-brand-blue-600">That Actually Works</span>
+            Your Guide to <br className="hidden md:block" />
+            <span className="text-brand-blue-600">GLP-1 Weight Loss Treatments</span>
           </h1>
           
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Access FDA-approved GLP-1 medications online with ongoing care from weight loss specialists.
+            Learn how FDA-approved GLP-1 medications work and find out if they’re the right choice for you.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
